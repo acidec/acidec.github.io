@@ -1,0 +1,732 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="acidec">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="此文章适用于现代（2010年及以后）的x86_64机器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Arch Linux 安装教程">
+<meta property="og:url" content="https://acidec.github.io/2022/11/16/archlinux-installation/index.html">
+<meta property="og:site_name" content="acidec&#39;s blog">
+<meta property="og:description" content="此文章适用于现代（2010年及以后）的x86_64机器">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/1.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/2.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/3.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/4.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/5.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/7.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/8.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/9.png">
+<meta property="article:published_time" content="2022-11-16T13:34:49.000Z">
+<meta property="article:modified_time" content="2022-11-28T13:52:10.264Z">
+<meta property="article:author" content="acidec">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acidec.github.io/img/archlinux-installation/1.png">
+  
+  
+  
+  <title>Arch Linux 安装教程 - acidec&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"acidec.github.io","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>acidec&#39;s blog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="Arch Linux 安装教程"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-11-16 21:34" pubdate>
+          2022年11月16日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          34 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Arch Linux 安装教程</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p><strong>此文章适用于现代（2010年及以后）的x86_64机器</strong></p>
+<span id="more"></span>
+<p>在R3 3200U的老机器退役后，我这里已没有任何类Unix机器，包括虚拟机和WSL以及容器类（MinGW）。<br>在Windows下，原生的RUST只能使用MSVC，随够用但总觉优化不够好，遂试图在实体机上安装Arch Linux。<br>截至教程发布日，Arch Linux Live CD的最新版本是11月的，经测试没有问题。</p>
+<h2 id="支持的硬件"><a href="#支持的硬件" class="headerlink" title="支持的硬件"></a>支持的硬件</h2><p><strong>·x86_64架构的CPU，建议为2006年以后的CPU<br>·至少有1GB内存（Arch Wiki最小的512MB现在已经无法启动11月的Live CD）<br>·使用UEFI引导的主板<br>·可用的网络连接<br>·20GB可用的硬盘空间</strong></p>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="制作安装介质"><a href="#制作安装介质" class="headerlink" title="制作安装介质"></a>制作安装介质</h3><ol>
+<li>到镜像站去下载最新的Arch Linux Live CD iso -&gt;<br><code>https://mirrors.ustc.edu.cn/archlinux/iso/latest/archlinux-x86_64.iso</code></li>
+<li>使用工具将其写入到USB驱动器或者刻录光盘（不建议）<br> 推荐写入工具<a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/github-release/balena-io/etcher/LatestRelease/">balenaEtcher</a></li>
+<li>重启后按主板厂商的指引设置USB启动或选择USB启动（若失败请先关闭安全启动<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="Secure Boot">[1]</span></a></sup>）</li>
+<li>从USB驱动器引导后就进入了Live CD环境</li>
+</ol>
+<h3 id="Live-CD设置"><a href="#Live-CD设置" class="headerlink" title="Live CD设置"></a>Live CD设置</h3><ol>
+<li>连接网络 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">iwctl station wlan0 scan<br>iwctl station wlan0 get-networks<br>iwctl station wlan0 connect WiFi的SSID --passphrase WiFi的密码<br>ip addr<br></code></pre></td></tr></table></figure>
+ 若<code>ip addr</code>返回了wlan0的信息并且下面有正确的ip，则代表网络已连接成功。<br> 可选：停止<code>reflector</code>服务，防止<code>/etc/pacman.d/mirrorlist</code>被写入其他地区镜像 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl stop reflector.service<br></code></pre></td></tr></table></figure></li>
+<li>配置镜像<br> 由于结界，我们无法直接从结界外部的镜像站获取软件包。在Live CD内也无法使用魔法绕过结界，所以我们还是步前辈们的足迹，使用他们搭建好的国内镜像站（注意：这一步须在<code>reflector.service</code>停止后进行，可手动结束或等待其执行完成，否则编辑完的<code>mirrorlist</code>会被它刷写） -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /etc/pacman.d/mirrorlist<br></code></pre></td></tr></table></figure>
+<ul>
+<li>在文件开头按<code>i</code>进入<code>insert</code>模式，添加<code>Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</code></li>
+<li>按<code>esc</code>退出<code>insert</code>模式，输入<code>:wq</code>保存并退出<code>vim</code></li>
+</ul>
+</li>
+</ol>
+<h3 id="磁盘相关"><a href="#磁盘相关" class="headerlink" title="磁盘相关"></a>磁盘相关</h3><ol>
+<li>磁盘分区 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">cfdisk /dev/nvme0n1<br></code></pre></td></tr></table></figure>
+<ul>
+<li>使用GPT分区表（这是UEFI引导的必须条件）</li>
+<li>推荐分区方案 -&gt;<ul>
+<li>EFI分区：不小于4MB，类型：<code>EFI System</code></li>
+<li>主分区：不小于10GB，类型：<code>Linux filesystem</code><br>  （建议在分区内部建立一个swapfile来承担swap的任务）<br>  <img src="/../img/archlinux-installation/1.png" srcset="/img/loading.gif" lazyload></li>
+</ul>
+</li>
+<li>结束后，选<code>Write</code>再输入<code>yes</code>来写入分区表，再选<code>Quit</code>退出</li>
+</ul>
+</li>
+<li>建立文件系统 -&gt;<br> 主分区使用<code>ext4</code>文件系统 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkfs.vfat /dev/nvme0n1p1<br>mkfs.ext4 /dev/nvme0n1p2<br></code></pre></td></tr></table></figure></li>
+<li>挂载分区 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">mount /dev/nvme0n1p2 /mnt<br><span class="hljs-built_in">mkdir</span> -p /mnt/boot/efi<br>mount /dev/nvme0n1p1 /mnt/boot/efi<br></code></pre></td></tr></table></figure></li>
+<li>创建<code>swapfile</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">dd</span> <span class="hljs-keyword">if</span>=/dev/zero of=/mnt/swapfile bs=1M count=8192<br><span class="hljs-built_in">chmod</span> 600 /mnt/swapfile<br>mkswap /mnt/swapfile<br>swapon /mnt/swapfile<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p><strong>目标为一个日常使用的桌面环境，使用KDE</strong></p>
+<ol>
+<li><code>pacstrap</code>安装必要的包 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh grml-zsh-config grub efibootmgr efivar networkmanager openssh vim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox firefox-i18n-zh-cn<br></code></pre></td></tr></table></figure></li>
+<li>生成<code>fstab</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<br></code></pre></td></tr></table></figure></li>
+<li><code>chroot</code>到新系统 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="初步配置系统"><a href="#初步配置系统" class="headerlink" title="初步配置系统"></a>初步配置系统</h3><ol>
+<li>时间设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>hwclock --systohc<br></code></pre></td></tr></table></figure></li>
+<li>用户设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">useradd -m 用户名 -G wheel<br>passwd 用户名<br></code></pre></td></tr></table></figure>
+ 然后设个密码~</li>
+<li>编辑<code>sudoers</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">visudo<br></code></pre></td></tr></table></figure>
+ 将文件中的<code># %wheel ALL=(ALL:ALL) ALL</code>（大概率在第85行）的注释取消，使得<code>wheel</code>组里的用户可以使用<code>sudo</code></li>
+<li>更改默认Shell -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">chsh 用户名<br></code></pre></td></tr></table></figure>
+ 将默认Shell更改为<code>/bin/zsh</code></li>
+<li>本地化 -&gt;<br> 使用SSH连接所以不用担心字符异常 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;LANG=\&quot;zh_CN.UTF-8\&quot;&quot;</span> &gt;&gt; /etc/locale.conf<br>sed -i <span class="hljs-string">&quot;s@#zh_CN.UTF-8 UTF-8@zh_CN.UTF-8 UTF-8@g&quot;</span> /etc/locale.gen<br></code></pre></td></tr></table></figure>
+ 去掉<code># zh_CN.UTF-8 UTF-8</code>的注释符号“<code>#</code>”<br> 最后运行 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">locale-gen<br></code></pre></td></tr></table></figure></li>
+<li>服务设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> NetworkManager<br>systemctl <span class="hljs-built_in">enable</span> sshd<br>systemctl <span class="hljs-built_in">enable</span> sddm<br>sed -i <span class="hljs-string">&quot;s@#HandleLidSwitch=suspend@HandleLidSwitch=ignore@g&quot;</span> /etc/systemd/logind.conf<br></code></pre></td></tr></table></figure></li>
+<li>引导设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-install --target=x86_64-efi --efi-directory=/boot/efi<br>sed -i <span class="hljs-string">&quot;s@#GRUB_DISABLE_OS_PROBER=false@GRUB_DISABLE_OS_PROBER=false@g&quot;</span> /etc/default/grub<br>grub-mkconfig -o /boot/grub/grub.cfg<br></code></pre></td></tr></table></figure></li>
+<li>退出<code>chroot</code>环境并重启 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br>reboot<br></code></pre></td></tr></table></figure>
+<strong>至此Arch Linux的安装就完成了</strong><br><strong>接下来是配置部分</strong></li>
+</ol>
+<h3 id="进一步配置系统"><a href="#进一步配置系统" class="headerlink" title="进一步配置系统"></a>进一步配置系统</h3><p>现在我们重启后，大概就是这样的 -&gt;<br><img src="/../img/archlinux-installation/2.png" srcset="/img/loading.gif" lazyload></p>
+<ol>
+<li><p>输入法配置<br> 如果直接<code>右键</code>-<code>配置</code>是会显示这个的 -&gt;<br> <img src="/../img/archlinux-installation/3.png" srcset="/img/loading.gif" lazyload><br> 这会进入文本配置，显然我们是不懂的（<br> 所以要安装<code>fcitx5-configtool</code> -&gt;</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S fcitx5-configtool<br></code></pre></td></tr></table></figure>
+<p> 然后再<code>右键</code>-<code>配置</code>就可以看到 -&gt;<br> <img src="/../img/archlinux-installation/4.png" srcset="/img/loading.gif" lazyload><br> 然而现在按<code>Ctrl+Tab</code>是不能切换到拼音输入法的，我们需要把<code>Fcitx5</code>设为默认输入法并自动启动 -&gt;</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/environment<br></code></pre></td></tr></table></figure>
+<p> 把下面的东西加进去 -&gt;</p>
+ <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">GTK_IM_MODULE=fcitx<br>QT_IM_MODULE=fcitx<br>XMODIFIERS=@im=fcitx<br>SDL_IM_MODULE=fcitx<br>GLFW_IM_MODULE=ibus<br></code></pre></td></tr></table></figure>
+<p> 重新登录就可以正常使用啦~<br> 更多用法请参阅<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Arch Wiki</a></p>
+</li>
+<li><p>魔法<br> 推荐使用<a target="_blank" rel="noopener" href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash for Windows</a>（<br> <del>虽然是只针对Windows，但也有Linux的编译版本</del><br> 下载这个（版本可能不同，以最新版为准） -&gt;<br> <img src="/../img/archlinux-installation/5.png" srcset="/img/loading.gif" lazyload><br> <del>国内也许需要下载几个小时</del><br> 然后就是 -&gt;</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">tar xvf Clash.for.Windows-0.20.8-x64-linux.tar.gz<br><span class="hljs-built_in">cd</span> Clash\ <span class="hljs-keyword">for</span>\ Windows-0.20.8-x64-linux<br>./cfw<br></code></pre></td></tr></table></figure>
+<p> 全开就行了 -&gt;<br> <img src="/../img/archlinux-installation/7.png" srcset="/img/loading.gif" lazyload><br> 现在我们没代理服务器，需要找个机场买订阅</p>
+ <a class="btn" href="https://wnbo.top/#/register?code=WhcJ5GTh"  target="_blank">跑路了（</a>
+ <a class="btn" href="https://sspcloud.net/#/register?code=NA4x3XpM"  target="_blank">点这里</a>
+
+<p> 然后就是<code>仪表盘</code>-<code>一键订阅</code>-<code>复制订阅地址</code><br> <img src="/../img/archlinux-installation/8.png" srcset="/img/loading.gif" lazyload><br> 在蓝色标记框粘贴，然后按<code>Download</code>就能生成配置文件了<br> 然后就可以成功打开Google了 -&gt;<br> <img src="/../img/archlinux-installation/9.png" srcset="/img/loading.gif" lazyload><br> <strong>终端的配置</strong><br> 有时候命令行工具不能使用代理，比如<code>paru</code>在构建软件包时，会从Github上拉去源代码，这样就直接卡死了（<br> 所以我们需要 -&gt;</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 临时使用</span><br><span class="hljs-built_in">export</span> all_proxy=<span class="hljs-string">&#x27;socks5://127.0.0.1:7890&#x27;</span><br><span class="hljs-comment"># 自动启动</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;export all_proxy=&#x27;socks5://127.0.0.1:7890&#x27;&quot;</span> &gt;&gt; ~/.zshrc<br></code></pre></td></tr></table></figure></li>
+<li><p>软件源<br> 众所周知，官方源对于灰色地带&#x2F;非自由软件是不收录的<br> 所以我们通常用第三方源+<code>AUR</code>来补齐官方源的短板<br> 官方源是不带任何<code>AUR</code>工具的，所以我们先装<code>archlinuxcn</code>源</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/pacman.conf<br></code></pre></td></tr></table></figure>
+<p> 加入以下文本 -&gt;</p>
+ <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">[archlinuxcn]<br>Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch<br></code></pre></td></tr></table></figure>
+<p> 然后获取<code>keyring</code> -&gt;</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S archlinuxcn-keyring<br></code></pre></td></tr></table></figure>
+<p> 就可以使用<code>archlinuxcn</code>源了！<br> 由于要使用<code>AUR</code>，所以我们先装一个AUR工具：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S paru<br></code></pre></td></tr></table></figure>
+<p> 详细的用法和<code>pacman</code>一样<br><strong>到现在一个日常使用的系统已经完成了~</strong></p>
+</li>
+</ol>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Secure Boot
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Software/" class="category-chain-item">Software</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Linux/">#Linux</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Arch Linux 安装教程</div>
+      <div>https://acidec.github.io/2022/11/16/archlinux-installation/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>acidec</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年11月16日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/11/13/alder-lake-mobile-sku/" title="12代Intel Core移动端SKU">
+                        <span class="hidden-mobile">12代Intel Core移动端SKU</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
