@@ -129,19 +129,6 @@
   
   
   <entry>
-    <title>Mind Error Notes A1</title>
-    <link href="/2010/02/02/A0/"/>
-    <url>/2010/02/02/A0/</url>
-    
-    <content type="html"><![CDATA[<p>（</p><span id="more"></span><p>哎呀 反正也不给麻瓜看~<br>这是在<code>Github Pages</code>上搭得blog<br>国内不能访问是很正常的<br>挂上了Google Search Console<br>Google能爬到，Baidu还没用<br>看起来不是自己的域名会被忽略（</p><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><p>昨天Github已经被墙了，访问会报连接意外中断，和Google的情况一样<br>想要访问只能靠魔法</p><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><p>为什么日期是2009年呢</p><ul><li>把这些文章放到底下（</li><li>2009年前景大好<ul><li>Intel Core 发布</li><li>《Strobe》- Deadmau5 发布</li><li><del>Fantasy about rain&#x2F;forest</del></li></ul></li></ul><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><blockquote><p>控制收紧了，不知道什么时候会崩溃<br>逐渐与境外 Remote Server 的连接也可能随时被中断<br>彻底与世隔绝，中断UDP时代</p></blockquote>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>C++ codes for memory overflow</title>
     <link href="/2009/03/16/cpp-fast-out-of-memory/"/>
     <url>/2009/03/16/cpp-fast-out-of-memory/</url>
@@ -161,6 +148,19 @@
       <tag>C++</tag>
       
     </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mind Error Notes A1</title>
+    <link href="/2009/01/02/A0/"/>
+    <url>/2009/01/02/A0/</url>
+    
+    <content type="html"><![CDATA[<p>（</p><span id="more"></span><p>哎呀 反正也不给麻瓜看~<br>这是在<code>Github Pages</code>上搭得blog<br>国内不能访问是很正常的<br>挂上了Google Search Console<br>Google能爬到，Baidu还没用<br>看起来不是自己的域名会被忽略（</p><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><p>昨天Github已经被墙了，访问会报连接意外中断，和Google的情况一样<br>想要访问只能靠魔法</p><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><p>为什么日期是2009年呢</p><ul><li>把这些文章放到底下（</li><li>2009年前景大好<ul><li>Intel Core 发布</li><li>《Strobe》- Deadmau5 发布</li><li><del>Fantasy about rain&#x2F;forest</del></li></ul></li></ul><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><blockquote><p>控制收紧了，不知道什么时候会崩溃<br>逐渐与境外 Remote Server 的连接也可能随时被中断<br>彻底与世隔绝，中断UDP时代</p></blockquote>]]></content>
+    
+    
     
   </entry>
   
