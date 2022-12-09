@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
+<html lang="en" data-default-color-scheme=auto>
 
 
 
@@ -16,20 +16,27 @@
   <meta name="author" content="acidec">
   <meta name="keywords" content="">
   
-    <meta name="description" content="此文章适用于现代（2010年及以后）的x86_64机器">
+    <meta name="description" content="This article is only for China mainland(using Chinese Simplefid language)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Arch Linux 安装教程">
-<meta property="og:url" content="https://acidec.github.io/2022/11/16/archlinux-installation/index.html">
+<meta property="og:url" content="https://acidec.github.io/2022/11/17/archlinux-installation/index.html">
 <meta property="og:site_name" content="acidec&#39;s blog">
-<meta property="og:description" content="此文章适用于现代（2010年及以后）的x86_64机器">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/logo.png">
-<meta property="article:published_time" content="2022-11-16T13:34:49.000Z">
-<meta property="article:modified_time" content="2022-11-29T02:00:05.834Z">
+<meta property="og:description" content="This article is only for China mainland(using Chinese Simplefid language)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/1.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/2.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/3.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/4.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/5.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/7.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/8.png">
+<meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/9.png">
+<meta property="article:published_time" content="2022-11-16T21:34:49.000Z">
+<meta property="article:modified_time" content="2022-12-07T23:02:33.476Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://acidec.github.io/img/archlinux-installation/logo.png">
+<meta name="twitter:image" content="https://acidec.github.io/img/archlinux-installation/1.png">
   
   
   
@@ -117,7 +124,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                Home
               </a>
             </li>
           
@@ -129,7 +136,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                归档
+                Archives
               </a>
             </li>
           
@@ -141,7 +148,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                Categories
               </a>
             </li>
           
@@ -153,7 +160,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
-                标签
+                Tags
               </a>
             </li>
           
@@ -165,7 +172,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于
+                About
               </a>
             </li>
           
@@ -210,7 +217,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2022-11-16 21:34" pubdate>
-          2022年11月16日 晚上
+          November 16, 2022 pm
         </time>
       </span>
     
@@ -221,7 +228,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          4.1k words
         
       </span>
     
@@ -232,7 +239,7 @@
         
         
         
-          34 分钟
+          34 mins
         
       </span>
     
@@ -275,9 +282,9 @@
             
               <div class="markdown-body">
                 
-                <p><strong>此文章适用于现代（2010年及以后）的x86_64机器</strong></p>
+                <p><strong>This article is only for China mainland(using Chinese Simplefid language)</strong></p>
 <span id="more"></span>
-<p>在R3 3200U的老机器退役后，我这里已没有任何类Unix机器，包括虚拟机和WSL以及容器类（MinGW）。<br>在Windows下，原生的RUST只能使用MSVC，随够用但总觉优化不够好，遂试图在实体机上安装Arch Linux。<br>截至教程发布日，Arch Linux Live CD的最新版本是11月的，经测试没有问题。</p>
+<p><strong>此文章适用于现代（2010年及以后）的x86_64机器</strong><br>在R3 3200U的老机器退役后，我这里已没有任何类Unix机器，包括虚拟机和WSL以及容器类（MinGW）。<br>在Windows下，原生的RUST只能使用MSVC，随够用但总觉优化不够好，遂试图在实体机上安装Arch Linux。<br>截至教程发布日，Arch Linux Live CD的最新版本是11月的，经测试没有问题。</p>
 <h2 id="支持的硬件"><a href="#支持的硬件" class="headerlink" title="支持的硬件"></a>支持的硬件</h2><p><strong>·x86_64架构的CPU，建议为2006年以后的CPU<br>·至少有1GB内存（Arch Wiki最小的512MB现在已经无法启动11月的Live CD）<br>·使用UEFI引导的主板<br>·可用的网络连接<br>·20GB可用的硬盘空间</strong></p>
 <h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="制作安装介质"><a href="#制作安装介质" class="headerlink" title="制作安装介质"></a>制作安装介质</h3><ol>
 <li>到镜像站去下载最新的Arch Linux Live CD iso -&gt;<br><code>https://mirrors.ustc.edu.cn/archlinux/iso/latest/archlinux-x86_64.iso</code></li>
@@ -408,31 +415,31 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Arch Linux 安装教程</div>
-      <div>https://acidec.github.io/2022/11/16/archlinux-installation/</div>
+      <div>https://acidec.github.io/2022/11/17/archlinux-installation/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>作者</div>
+          <div>Author</div>
           <div>acidec</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2022年11月16日</div>
+          <div>Posted on</div>
+          <div>November 16, 2022</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>许可协议</div>
+          <div>Licensed under</div>
           <div>
             
               
               
                 <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
                     <i class="iconfont icon-by"></i>
                   </span>
                 </a>
@@ -452,13 +459,19 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2022/11/29/archlinux-deploy-docker/" title="Arch Linux deploy Docker">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Arch Linux deploy Docker</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/11/13/alder-lake-mobile-sku/" title="12代Intel Core移动端SKU">
-                        <span class="hidden-mobile">12代Intel Core移动端SKU</span>
-                        <span class="visible-mobile">下一篇</span>
+                      <a href="/2022/11/13/alder-lake-mobile-sku/" title="12th Intel Core mobile platform SKU">
+                        <span class="hidden-mobile">12th Intel Core mobile platform SKU</span>
+                        <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -477,7 +490,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -532,7 +545,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -540,7 +553,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -719,7 +732,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
   </noscript>
 </body>
 </html>
