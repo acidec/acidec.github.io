@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>KataGo installation</title>
+    <link href="/2022/12/15/katago/"/>
+    <url>/2022/12/15/katago/</url>
+    
+    <content type="html"><![CDATA[<p>KataGo is the strongest open source Go AI available online.<br>It’s source code and binaries is on <a href="https://github.com/lightvector/KataGo">Github link</a>.</p><span id="more"></span><h2 id="Get-the-model-file"><a href="#Get-the-model-file" class="headerlink" title="Get the model file"></a>Get the model file</h2><p>If you have a modern GPU (GCN&#x2F;Volta architecture and subsequent models), I suggest you download the <code>openCL</code> version.<br>If you don’t have a modern GPU or you want to run it on CPU, download the <code>Eigen</code> version.</p><p>Windows:</p><a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-opencl-windows-x64.zip"  target="_blank">openCL</a><p>&amp;&amp;</p><a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-eigen-windows-x64.zip"  target="_blank">Eigen</a><p>Linux:</p><a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-opencl-linux-x64.zip"  target="_blank">openCL</a><p>&amp;&amp;</p><a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-eigen-linux-x64.zip"  target="_blank">Eigen</a><div class="note note-warning">            <p><strong>It is not recommended that you use <code>CUDA</code> version because you should have a NVIDIA GPU first and subsequent configuration will be complicated.</strong></p>          </div><p><strong>Unzip the file, we will use it after.</strong></p><h2 id="Get-KaTrain"><a href="#Get-KaTrain" class="headerlink" title="Get KaTrain"></a>Get KaTrain</h2><p>This is the GUI officially recommended by KataGo -&gt;<br><img src="/../img/katago/1.png"></p><a class="btn" href="https://github.com/sanderland/katrain"  target="_blank">Github Link</a><p>It can run on Windows&#x2F;Linux&#x2F;macOS, but:</p><ul><li>The official binary does not have a linux version;</li><li>The macOS version can’t run on arm64 architecture, you’d use <code>Rosetta 2</code> translate it to x86_64.</li></ul><p>Windows version:</p><a class="btn" href="https://github.com/sanderland/katrain/releases/download/v1.12/KaTrain.zip"  target="_blank">Download</a><p>Unzip it and run <code>KaTrain.exe</code> -&gt;<br><img src="/../img/katago/2.png"><br>Open the menu bar, choose <code>General &amp; Engine Settings</code> -&gt;<br><img src="/../img/katago/3.png"><br>Input KataGo model binary path to <code>Path to KataGo executable</code> box.<br><strong>Now it works!</strong></p><h2 id="Addition-tricks"><a href="#Addition-tricks" class="headerlink" title="Addition tricks"></a>Addition tricks</h2><p>These parameter can be fine tuned.<br>The larger the number of <code>Maximum number of visits in analysis</code>, the stronger the AI.<br><img src="/../img/katago/4.png"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Software</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>AI</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Using C++ to Realize the Solving of Unary Quadratic Equation</title>
     <link href="/2022/12/05/cpp-quadratic-equation/"/>
     <url>/2022/12/05/cpp-quadratic-equation/</url>
@@ -148,19 +173,6 @@
       <tag>C++</tag>
       
     </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Mind Error Notes A1</title>
-    <link href="/2009/01/02/A0/"/>
-    <url>/2009/01/02/A0/</url>
-    
-    <content type="html"><![CDATA[<p>（</p><span id="more"></span><p>哎呀 反正也不给麻瓜看~<br>这是在<code>Github Pages</code>上搭得blog<br>国内不能访问是很正常的<br>挂上了Google Search Console<br>Google能爬到，Baidu还没用<br>看起来不是自己的域名会被忽略（</p><h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><p>昨天Github已经被墙了，访问会报连接意外中断，和Google的情况一样<br>想要访问只能靠魔法</p><h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><p>为什么日期是2009年呢</p><ul><li>把这些文章放到底下（</li><li>2009年前景大好<ul><li>Intel Core 发布</li><li>《Strobe》- Deadmau5 发布</li><li><del>Fantasy about rain&#x2F;forest</del></li></ul></li></ul><h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><blockquote><p>控制收紧了，不知道什么时候会崩溃<br>逐渐与境外 Remote Server 的连接也可能随时被中断<br>彻底与世隔绝，中断UDP时代</p></blockquote>]]></content>
-    
-    
     
   </entry>
   

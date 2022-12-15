@@ -16,21 +16,26 @@
   <meta name="author" content="acidec">
   <meta name="keywords" content="">
   
-    <meta name="description" content="（">
+    <meta name="description" content="KataGo is the strongest open source Go AI available online.It’s source code and binaries is on Github link.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mind Error Notes A1">
-<meta property="og:url" content="https://acidec.github.io/2009/01/02/A0/index.html">
+<meta property="og:title" content="KataGo installation">
+<meta property="og:url" content="https://acidec.github.io/2022/12/15/katago/index.html">
 <meta property="og:site_name" content="acidec&#39;s blog">
-<meta property="og:description" content="（">
+<meta property="og:description" content="KataGo is the strongest open source Go AI available online.It’s source code and binaries is on Github link.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2009-01-01T20:00:00.000Z">
-<meta property="article:modified_time" content="2022-12-09T00:59:48.668Z">
+<meta property="og:image" content="https://acidec.github.io/img/katago/logo.jpg">
+<meta property="article:published_time" content="2022-12-15T09:34:27.000Z">
+<meta property="article:modified_time" content="2022-12-15T02:38:46.674Z">
 <meta property="article:author" content="acidec">
+<meta property="article:tag" content="AI">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://acidec.github.io/img/katago/logo.jpg">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
   
-  <title>Mind Error Notes A1 - acidec&#39;s blog</title>
+  
+  <title>KataGo installation - acidec&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -167,6 +172,18 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                Links
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
@@ -195,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Mind Error Notes A1"></span>
+            <span id="subtitle" data-typed-text="KataGo installation"></span>
           
         </div>
 
@@ -206,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2009-01-01 20:00" pubdate>
-          January 1, 2009 pm
+        <time datetime="2022-12-15 09:34" pubdate>
+          December 15, 2022 am
         </time>
       </span>
     
@@ -218,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          295 words
+          994 words
         
       </span>
     
@@ -229,7 +246,7 @@
         
         
         
-          3 mins
+          9 mins
         
       </span>
     
@@ -267,28 +284,38 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Mind Error Notes A1</h1>
+            <h1 style="display: none">KataGo installation</h1>
             
             
               <div class="markdown-body">
                 
-                <p>（</p>
+                <p>KataGo is the strongest open source Go AI available online.<br>It’s source code and binaries is on <a target="_blank" rel="noopener" href="https://github.com/lightvector/KataGo">Github link</a>.</p>
 <span id="more"></span>
-<p>哎呀 反正也不给麻瓜看~<br>这是在<code>Github Pages</code>上搭得blog<br>国内不能访问是很正常的<br>挂上了Google Search Console<br>Google能爬到，Baidu还没用<br>看起来不是自己的域名会被忽略（</p>
-<h1 id="F"><a href="#F" class="headerlink" title="F"></a>F</h1><p>昨天Github已经被墙了，访问会报连接意外中断，和Google的情况一样<br>想要访问只能靠魔法</p>
-<h1 id="S"><a href="#S" class="headerlink" title="S"></a>S</h1><p>为什么日期是2009年呢</p>
+<h2 id="Get-the-model-file"><a href="#Get-the-model-file" class="headerlink" title="Get the model file"></a>Get the model file</h2><p>If you have a modern GPU (GCN&#x2F;Volta architecture and subsequent models), I suggest you download the <code>openCL</code> version.<br>If you don’t have a modern GPU or you want to run it on CPU, download the <code>Eigen</code> version.</p>
+<p>Windows:</p>
+<a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-opencl-windows-x64.zip"  target="_blank">openCL</a>
+<p>&amp;&amp;</p>
+<a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-eigen-windows-x64.zip"  target="_blank">Eigen</a>
+
+<p>Linux:</p>
+<a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-opencl-linux-x64.zip"  target="_blank">openCL</a>
+<p>&amp;&amp;</p>
+<a class="btn" href="https://github.com/lightvector/KataGo/releases/download/v1.11.0/katago-v1.11.0-eigen-linux-x64.zip"  target="_blank">Eigen</a>
+<div class="note note-warning">
+            <p><strong>It is not recommended that you use <code>CUDA</code> version because you should have a NVIDIA GPU first and subsequent configuration will be complicated.</strong></p>
+          </div>
+<p><strong>Unzip the file, we will use it after.</strong></p>
+<h2 id="Get-KaTrain"><a href="#Get-KaTrain" class="headerlink" title="Get KaTrain"></a>Get KaTrain</h2><p>This is the GUI officially recommended by KataGo -&gt;<br><img src="/../img/katago/1.png" srcset="/img/loading.gif" lazyload></p>
+<a class="btn" href="https://github.com/sanderland/katrain"  target="_blank">Github Link</a>
+<p>It can run on Windows&#x2F;Linux&#x2F;macOS, but:</p>
 <ul>
-<li>把这些文章放到底下（</li>
-<li>2009年前景大好<ul>
-<li>Intel Core 发布</li>
-<li>《Strobe》- Deadmau5 发布</li>
-<li><del>Fantasy about rain&#x2F;forest</del></li>
+<li>The official binary does not have a linux version;</li>
+<li>The macOS version can’t run on arm64 architecture, you’d use <code>Rosetta 2</code> translate it to x86_64.</li>
 </ul>
-</li>
-</ul>
-<h1 id="T"><a href="#T" class="headerlink" title="T"></a>T</h1><blockquote>
-<p>控制收紧了，不知道什么时候会崩溃<br>逐渐与境外 Remote Server 的连接也可能随时被中断<br>彻底与世隔绝，中断UDP时代</p>
-</blockquote>
+<p>Windows version:</p>
+<a class="btn" href="https://github.com/sanderland/katrain/releases/download/v1.12/KaTrain.zip"  target="_blank">Download</a>
+<p>Unzip it and run <code>KaTrain.exe</code> -&gt;<br><img src="/../img/katago/2.png" srcset="/img/loading.gif" lazyload><br>Open the menu bar, choose <code>General &amp; Engine Settings</code> -&gt;<br><img src="/../img/katago/3.png" srcset="/img/loading.gif" lazyload><br>Input KataGo model binary path to <code>Path to KataGo executable</code> box.<br><strong>Now it works!</strong></p>
+<h2 id="Addition-tricks"><a href="#Addition-tricks" class="headerlink" title="Addition tricks"></a>Addition tricks</h2><p>These parameter can be fine tuned.<br>The larger the number of <code>Maximum number of visits in analysis</code>, the stronger the AI.<br><img src="/../img/katago/4.png" srcset="/img/loading.gif" lazyload></p>
 
                 
               </div>
@@ -297,6 +324,34 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Software/" class="category-chain-item">Software</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/AI/">#AI</a>
+      
+    </div>
   
 </div>
 
@@ -306,8 +361,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Mind Error Notes A1</div>
-      <div>https://acidec.github.io/2009/01/02/A0/</div>
+      <div>KataGo installation</div>
+      <div>https://acidec.github.io/2022/12/15/katago/</div>
     </div>
     <div class="license-meta">
       
@@ -319,7 +374,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>January 1, 2009</div>
+          <div>December 15, 2022</div>
         </div>
       
       
@@ -351,15 +406,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2009/03/16/cpp-fast-out-of-memory/" title="C++ codes for memory overflow">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">C++ codes for memory overflow</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/12/05/cpp-quadratic-equation/" title="Using C++ to Realize the Solving of Unary Quadratic Equation">
+                        <span class="hidden-mobile">Using C++ to Realize the Solving of Unary Quadratic Equation</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
@@ -459,6 +514,30 @@
        <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
     </div>
   
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        Total visits 
+        <span id="busuanzi_value_site_pv"></span>
+        
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        Total visitors 
+        <span id="busuanzi_value_site_uv"></span>
+        
+      </span>
+    
+    
+  
+</div>
+
   
   
   
@@ -605,6 +684,8 @@
   <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
