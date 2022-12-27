@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/8.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/9.png">
 <meta property="article:published_time" content="2022-11-16T21:34:49.000Z">
-<meta property="article:modified_time" content="2022-12-07T23:02:33.476Z">
+<meta property="article:modified_time" content="2022-12-27T07:59:34.107Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.1k words
+          4.4k words
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          34 mins
+          37 mins
         
       </span>
     
@@ -334,9 +334,10 @@
 </ol>
 <h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p><strong>目标为一个日常使用的桌面环境，使用KDE</strong></p>
 <ol>
-<li><code>pacstrap</code>安装必要的包 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh grml-zsh-config grub efibootmgr efivar networkmanager openssh vim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox firefox-i18n-zh-cn<br></code></pre></td></tr></table></figure></li>
+<li><code>pacstrap</code>安装必要的包 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh grub efibootmgr efivar networkmanager openssh vim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox firefox-i18n-zh-cn<br></code></pre></td></tr></table></figure></li>
 <li>生成<code>fstab</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<br></code></pre></td></tr></table></figure></li>
-<li><code>chroot</code>到新系统 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br></code></pre></td></tr></table></figure></li>
+<li><code>chroot</code>到新系统 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br></code></pre></td></tr></table></figure>
+<strong>如果你想装一个服务器用基本系统（没有GUI）</strong><br>这是我的习惯 -&gt;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh grub efibootmgr efivar networkmanager openssh vim neovim<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="初步配置系统"><a href="#初步配置系统" class="headerlink" title="初步配置系统"></a>初步配置系统</h3><ol>
 <li>时间设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>hwclock --systohc<br></code></pre></td></tr></table></figure></li>
@@ -344,6 +345,7 @@
  然后设个密码~</li>
 <li>编辑<code>sudoers</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">visudo<br></code></pre></td></tr></table></figure>
  将文件中的<code># %wheel ALL=(ALL:ALL) ALL</code>（大概率在第85行）的注释取消，使得<code>wheel</code>组里的用户可以使用<code>sudo</code></li>
+<li>配置<code>zsh</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">su 用户名<br>git <span class="hljs-built_in">clone</span> https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git ~/.oh-my-zsh<br><span class="hljs-built_in">cp</span> ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc<br><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></figure></li>
 <li>更改默认Shell -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">chsh 用户名<br></code></pre></td></tr></table></figure>
  将默认Shell更改为<code>/bin/zsh</code></li>
 <li>本地化 -&gt;<br> 使用SSH连接所以不用担心字符异常 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;LANG=\&quot;zh_CN.UTF-8\&quot;&quot;</span> &gt;&gt; /etc/locale.conf<br>sed -i <span class="hljs-string">&quot;s@#zh_CN.UTF-8 UTF-8@zh_CN.UTF-8 UTF-8@g&quot;</span> /etc/locale.gen<br></code></pre></td></tr></table></figure>
