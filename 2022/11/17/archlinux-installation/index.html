@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/8.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/9.png">
 <meta property="article:published_time" content="2022-11-16T21:34:49.000Z">
-<meta property="article:modified_time" content="2023-01-02T09:28:03.681Z">
+<meta property="article:modified_time" content="2023-01-02T14:33:01.509Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.4k words
+          4.5k words
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          37 mins
+          38 mins
         
       </span>
     
@@ -335,8 +335,8 @@
 <h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><p><strong>目标为一个日常使用的桌面环境，使用KDE</strong></p>
 <ol>
 <li>安装软件包 -&gt;<br> <strong>首先初始化keyring！！</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -Sy archlinux-keyring<br></code></pre></td></tr></table></figure>
- <code>pacstrap</code>安装必要的包 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh grub efibootmgr efivar networkmanager openssh vim neovim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox firefox-i18n-zh-cn neofetch<br></code></pre></td></tr></table></figure>
-<strong>如果你想装一个服务器用基本系统（没有GUI）</strong><br>这是我的习惯 -&gt;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh grub efibootmgr efivar networkmanager openssh vim neovim neofetch<br></code></pre></td></tr></table></figure></li>
+ <code>pacstrap</code>安装必要的包 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh zsh-completions grub efibootmgr efivar networkmanager openssh vim neovim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox firefox-i18n-zh-cn neofetch<br></code></pre></td></tr></table></figure>
+<strong>如果你想装一个服务器用基本系统（没有GUI）</strong><br>这是我的习惯 -&gt;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh zsh-completions grub efibootmgr efivar networkmanager openssh vim neovim neofetch<br></code></pre></td></tr></table></figure></li>
 <li>生成<code>fstab</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<br></code></pre></td></tr></table></figure></li>
 <li><code>chroot</code>到新系统 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br></code></pre></td></tr></table></figure></li>
 </ol>
