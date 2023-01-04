@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/8.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/9.png">
 <meta property="article:published_time" content="2022-11-16T21:34:49.000Z">
-<meta property="article:modified_time" content="2023-01-04T01:43:36.413Z">
+<meta property="article:modified_time" content="2023-01-04T10:37:05.018Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -328,7 +328,7 @@
 <li>结束后，选<code>Write</code>再输入<code>yes</code>来写入分区表，再选<code>Quit</code>退出</li>
 </ul>
 </li>
-<li>建立文件系统 -&gt;<br> 主分区使用<code>ext4</code>文件系统 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkfs.vfat /dev/nvme0n1p1<br>mkfs.ext4 /dev/nvme0n1p2<br></code></pre></td></tr></table></figure></li>
+<li>建立文件系统 -&gt;<br> 主分区使用<code>xfs</code>文件系统 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">mkfs.vfat /dev/nvme0n1p1<br>mkfs.xfs /dev/nvme0n1p2<br></code></pre></td></tr></table></figure></li>
 <li>挂载分区 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">mount /dev/nvme0n1p2 /mnt<br><span class="hljs-built_in">mkdir</span> -p /mnt/boot/efi<br>mount /dev/nvme0n1p1 /mnt/boot/efi<br></code></pre></td></tr></table></figure></li>
 <li>创建<code>swapfile</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">dd</span> <span class="hljs-keyword">if</span>=/dev/zero of=/mnt/swapfile bs=1M count=8192<br><span class="hljs-built_in">chmod</span> 600 /mnt/swapfile<br>mkswap /mnt/swapfile<br>swapon /mnt/swapfile<br></code></pre></td></tr></table></figure></li>
 </ol>
