@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/3.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/4.png">
 <meta property="article:published_time" content="2022-11-16T21:34:49.000Z">
-<meta property="article:modified_time" content="2023-01-07T11:31:56.646Z">
+<meta property="article:modified_time" content="2023-01-09T05:13:39.684Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -330,16 +330,16 @@
 </ol>
 <h3 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h3><ol>
 <li>安装软件包 -&gt;<br> <strong>首先初始化keyring！！</strong> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacman -Sy archlinux-keyring<br></code></pre></td></tr></table></figure>
- <strong>目标为一个日常使用的桌面环境，使用KDE</strong><br> <code>pacstrap</code>安装必要的包 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh zsh-completions grub efibootmgr efivar networkmanager openssh vim neovim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox-i18n-zh-cn neofetch<br></code></pre></td></tr></table></figure>
-<strong>如果你想装一个服务器用基本系统（没有GUI）</strong><br>这是我的习惯 -&gt;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh zsh-completions grub efibootmgr efivar networkmanager openssh vim neovim neofetch<br></code></pre></td></tr></table></figure>
-附加生成Windows可执行文件的<code>mingw</code> -&gt;<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt mingw-w64-gcc<br></code></pre></td></tr></table></figure></li>
+ <strong>Plan A:使用KDE Plasma作桌面环境的系统</strong><br> <code>pacstrap</code>安装必要的包 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh zsh-completions grub efibootmgr efivar networkmanager openssh vim neovim plasma kde-applications noto-fonts-cjk noto-fonts noto-fonts-emoji noto-fonts-extra fcitx5-chinese-addons firefox firefox-i18n-zh-cn neofetch<br></code></pre></td></tr></table></figure>
+ <strong>Plan B:使用命令行界面的Archlinux</strong><br> 这是我的习惯 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt base linux linux-firmware linux-headers base-devel git zsh zsh-completions grub efibootmgr efivar networkmanager openssh vim neovim neofetch<br></code></pre></td></tr></table></figure>
+ 附加生成Windows可执行文件的<code>mingw</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">pacstrap /mnt mingw-w64-gcc<br></code></pre></td></tr></table></figure></li>
 <li>生成<code>fstab</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">genfstab -U /mnt &gt;&gt; /mnt/etc/fstab<br></code></pre></td></tr></table></figure></li>
 <li><code>chroot</code>到新系统 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">arch-chroot /mnt<br></code></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="初步配置系统"><a href="#初步配置系统" class="headerlink" title="初步配置系统"></a>初步配置系统</h3><ol>
 <li>时间设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">ln</span> -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>hwclock --systohc<br></code></pre></td></tr></table></figure></li>
-<li>用户设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">useradd -m 用户名 -G wheel<br>passwd 用户名<br></code></pre></td></tr></table></figure>
- 然后设个密码~</li>
+<li>用户设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> 主机名 &gt; /etc/hostname<br>useradd -m 用户名 -G wheel<br>passwd 用户名<br></code></pre></td></tr></table></figure>
+ 最后一条指令用于更改密码，自己填就好</li>
 <li>编辑<code>sudoers</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">visudo<br></code></pre></td></tr></table></figure>
  将文件中的<code># %wheel ALL=(ALL:ALL) ALL</code>（大概率在第85行）的注释取消，使得<code>wheel</code>组里的用户可以使用<code>sudo</code></li>
 <li>配置<code>zsh</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">su 用户名<br>git <span class="hljs-built_in">clone</span> https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git ~/.oh-my-zsh<br><span class="hljs-built_in">cp</span> ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc<br><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></figure></li>
@@ -360,7 +360,7 @@
  重新登录就可以正常使用啦~<br> 更多用法请参阅<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Arch Wiki</a></li>
 <li>软件源<br> 众所周知，官方源对于灰色地带&#x2F;非自由软件是不收录的<br> 所以我们通常用第三方源+<code>AUR</code>来补齐官方源的短板<br> 官方源是不带任何<code>AUR</code>工具的，所以我们先装<code>archlinuxcn</code>源 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/pacman.conf<br></code></pre></td></tr></table></figure>
  加入以下文本 -&gt; <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">[archlinuxcn]<br>Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch<br></code></pre></td></tr></table></figure>
- 然后获取<code>keyring</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S archlinuxcn-keyring<br></code></pre></td></tr></table></figure>
+ 然后获取<code>keyring</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -Sy archlinuxcn-keyring<br></code></pre></td></tr></table></figure>
  就可以使用<code>archlinuxcn</code>源了！<br> 由于要使用<code>AUR</code>，所以我们先装一个AUR工具： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S paru<br></code></pre></td></tr></table></figure>
  详细的用法和<code>pacman</code>一样<br><strong>到现在一个日常使用的系统已经完成了~</strong></li>
 </ol>
