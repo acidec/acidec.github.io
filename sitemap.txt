@@ -1,3 +1,4 @@
+https://acidec.github.io/2023/10/02/random-makeing-note/
 https://acidec.github.io/2022/12/15/katago/
 https://acidec.github.io/2022/11/05/rust-quadratic-equation/
 https://acidec.github.io/about/index.html
@@ -15,6 +16,7 @@ https://acidec.github.io/tags/C/
 https://acidec.github.io/tags/AI/
 https://acidec.github.io/tags/Rust/
 https://acidec.github.io/tags/C/
+https://acidec.github.io/tags/Electron/
 https://acidec.github.io/categories/Hardware/
 https://acidec.github.io/categories/Software/
 https://acidec.github.io/categories/Programming/
