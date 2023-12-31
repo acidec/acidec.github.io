@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://acidec.github.io/2022/11/29/archlinux-deploy-docker/index.html">
 <meta property="og:site_name" content="acidec&#39;s blog">
 <meta property="og:description" content="The container is really an excellent design, borrowing the host kernel to run all Headless programs without worrying about security issues.">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-deploy-docker/1.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-deploy-docker/2.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-deploy-docker/3.png">
@@ -76,7 +76,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"acidec.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"acidec.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -89,7 +89,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -120,9 +120,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>首页</span>
               </a>
             </li>
           
@@ -132,9 +132,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>归档</span>
               </a>
             </li>
           
@@ -144,9 +144,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>分类</span>
               </a>
             </li>
           
@@ -156,9 +156,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>标签</span>
               </a>
             </li>
           
@@ -168,9 +168,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>关于</span>
               </a>
             </li>
           
@@ -180,9 +180,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
-                <span>Links</span>
+                <span>友链</span>
               </a>
             </li>
           
@@ -228,7 +228,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2022-11-29 10:44" pubdate>
-          November 29, 2022 am
+          2022年11月29日 上午
         </time>
       </span>
     
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k words
+          52 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          10 mins
+          1 分钟
         
       </span>
     
@@ -287,13 +287,12 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">Arch Linux deploy Docker</h1>
+            <h1 id="seo-header">Arch Linux deploy Docker</h1>
             
             
               <div class="markdown-body">
                 
-                <h2 id="The-container-is-really-an-excellent-design-borrowing-the-host-kernel-to-run-all-Headless-programs-without-worrying-about-security-issues-Prerequisites-Arch-Linux-x86-64-More-than-2GB-RAM-root-permissions-Start-installation1-Install-docker-package-by-using-pacman-gt-2-Make-docker-daemon-start-automaticly-while-booting-the-system-gt-3-Start-docker-service-gt-4-To-join-the-docker-group-that-is-allowed-to-use-the-docker-daemon-gt-5-Restart-the-docker-daemon-gt"><a href="#The-container-is-really-an-excellent-design-borrowing-the-host-kernel-to-run-all-Headless-programs-without-worrying-about-security-issues-Prerequisites-Arch-Linux-x86-64-More-than-2GB-RAM-root-permissions-Start-installation1-Install-docker-package-by-using-pacman-gt-2-Make-docker-daemon-start-automaticly-while-booting-the-system-gt-3-Start-docker-service-gt-4-To-join-the-docker-group-that-is-allowed-to-use-the-docker-daemon-gt-5-Restart-the-docker-daemon-gt" class="headerlink" title="The container is really an excellent design, borrowing the host kernel to run all Headless programs without worrying about security issues.## Prerequisites* Arch Linux x86_64* More than 2GB RAM* root permissions## Start installation1. Install docker package by using pacman -&gt;    2. Make docker daemon start automaticly while booting the system -&gt;    3. Start docker service -&gt;    4. To join the docker group that is allowed to use the docker daemon: -&gt;    5. Restart the docker daemon -&gt;    "></a>The container is really an excellent design, borrowing the host kernel to run all <code>Headless</code> programs without worrying about security issues.<br><a id="more"></a><br>## Prerequisites<br>* Arch Linux x86_64<br>* More than 2GB RAM<br>* <code>root</code> permissions<br>## Start installation<br>1. Install <code>docker</code> package by using <code>pacman</code> -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S docker<br></code></pre></td></tr></table></figure><br>2. Make <code>docker</code> daemon start automaticly while booting the system -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br></code></pre></td></tr></table></figure><br>3. Start <code>docker</code> service -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl start docker<br></code></pre></td></tr></table></figure><br>4. To join the <code>docker</code> group that is allowed to use the <code>docker</code> daemon: -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -G docker -a <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure><br>5. Restart the <code>docker</code> daemon -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure></h2><h2 id="Subsequent-part"><a href="#Subsequent-part" class="headerlink" title="Subsequent part"></a>Subsequent part</h2><ol>
+                <h2 id="The-container-is-really-an-excellent-design-borrowing-the-host-kernel-to-run-all-Headless-programs-without-worrying-about-security-issues-Prerequisites-Arch-Linux-x86-64-More-than-2GB-RAM-root-permissions-Start-installation1-Install-docker-package-by-using-pacman-2-Make-docker-daemon-start-automaticly-while-booting-the-system-3-Start-docker-service-4-To-join-the-docker-group-that-is-allowed-to-use-the-docker-daemon-5-Restart-the-docker-daemon"><a href="#The-container-is-really-an-excellent-design-borrowing-the-host-kernel-to-run-all-Headless-programs-without-worrying-about-security-issues-Prerequisites-Arch-Linux-x86-64-More-than-2GB-RAM-root-permissions-Start-installation1-Install-docker-package-by-using-pacman-2-Make-docker-daemon-start-automaticly-while-booting-the-system-3-Start-docker-service-4-To-join-the-docker-group-that-is-allowed-to-use-the-docker-daemon-5-Restart-the-docker-daemon" class="headerlink" title="The container is really an excellent design, borrowing the host kernel to run all Headless programs without worrying about security issues.## Prerequisites* Arch Linux x86_64* More than 2GB RAM* root permissions## Start installation1. Install docker package by using pacman -&gt;    2. Make docker daemon start automaticly while booting the system -&gt;    3. Start docker service -&gt;    4. To join the docker group that is allowed to use the docker daemon: -&gt;    5. Restart the docker daemon -&gt;    "></a>The container is really an excellent design, borrowing the host kernel to run all <code>Headless</code> programs without worrying about security issues.<br><span id="more"></span><br>## Prerequisites<br>* Arch Linux x86_64<br>* More than 2GB RAM<br>* <code>root</code> permissions<br>## Start installation<br>1. Install <code>docker</code> package by using <code>pacman</code> -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S docker<br></code></pre></td></tr></table></figure><br>2. Make <code>docker</code> daemon start automaticly while booting the system -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br></code></pre></td></tr></table></figure><br>3. Start <code>docker</code> service -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl start docker<br></code></pre></td></tr></table></figure><br>4. To join the <code>docker</code> group that is allowed to use the <code>docker</code> daemon: -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -G docker -a <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure><br>5. Restart the <code>docker</code> daemon -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure></h2><h2 id="Subsequent-part"><a href="#Subsequent-part" class="headerlink" title="Subsequent part"></a>Subsequent part</h2><ol>
 <li>Verify <code>docker</code> is running -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker version<br></code></pre></td></tr></table></figure></li>
 <li>This will pull down and run the, “Hello World” docker container from <code>dockerhub</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run archlinux<br></code></pre></td></tr></table></figure></li>
 </ol>
@@ -342,7 +341,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Docker/">#Docker</a>
+        <a href="/tags/Docker/" class="print-no-link">#Docker</a>
       
     </div>
   
@@ -360,26 +359,26 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>acidec</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>November 29, 2022</div>
+          <div>发布于</div>
+          <div>2022年11月29日</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>许可协议</div>
           <div>
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
                 </a>
@@ -402,7 +401,7 @@
                       <a href="/2022/12/05/cpp-quadratic-equation/" title="Using C++ to Realize the Solving of Unary Quadratic Equation">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Using C++ to Realize the Solving of Unary Quadratic Equation</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -411,7 +410,7 @@
                     
                       <a href="/2022/11/13/alder-lake-mobile-sku/" title="12th Intel Core mobile platform SKU">
                         <span class="hidden-mobile">12th Intel Core mobile platform SKU</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -432,7 +431,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>目录</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -488,7 +487,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -496,7 +495,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -701,7 +700,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>

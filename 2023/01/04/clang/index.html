@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://acidec.github.io/2023/01/04/clang/index.html">
 <meta property="og:site_name" content="acidec&#39;s blog">
 <meta property="og:description" content="从阮一峰老师那里转载。文章很长很长，字数已经可以出书了。">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-03T21:14:06.000Z">
 <meta property="article:modified_time" content="2023-09-16T21:17:20.017Z">
 <meta property="article:author" content="acidec">
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"acidec.github.io","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"acidec.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -84,7 +84,7 @@
 
 
   
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.0.0"></head>
 
 
 <body>
@@ -115,9 +115,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/" target="_self">
                 <i class="iconfont icon-home-fill"></i>
-                <span>Home</span>
+                <span>首页</span>
               </a>
             </li>
           
@@ -127,9 +127,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/archives/" target="_self">
                 <i class="iconfont icon-archive-fill"></i>
-                <span>Archives</span>
+                <span>归档</span>
               </a>
             </li>
           
@@ -139,9 +139,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/categories/" target="_self">
                 <i class="iconfont icon-category-fill"></i>
-                <span>Categories</span>
+                <span>分类</span>
               </a>
             </li>
           
@@ -151,9 +151,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/tags/" target="_self">
                 <i class="iconfont icon-tags-fill"></i>
-                <span>Tags</span>
+                <span>标签</span>
               </a>
             </li>
           
@@ -163,9 +163,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/about/" target="_self">
                 <i class="iconfont icon-user-fill"></i>
-                <span>About</span>
+                <span>关于</span>
               </a>
             </li>
           
@@ -175,9 +175,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/links/">
+              <a class="nav-link" href="/links/" target="_self">
                 <i class="iconfont icon-link-fill"></i>
-                <span>Links</span>
+                <span>友链</span>
               </a>
             </li>
           
@@ -223,7 +223,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2023-01-03 21:14" pubdate>
-          January 3, 2023 pm
+          2023年1月3日 晚上
         </time>
       </span>
     
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          128k words
+          71k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          1069 mins
+          591 分钟
         
       </span>
     
@@ -282,14 +282,13 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">C 语言教程</h1>
+            <h1 id="seo-header">C 语言教程</h1>
             
             
               <div class="markdown-body">
                 
                 <p>从阮一峰老师那里转载。文章很长很长，字数已经可以出书了。</p>
-<a id="more"></a>
+<span id="more"></span>
 <a class="btn" href="https://wangdoc.com/clang/"  target="_blank">原文链接</a>
 <h1 id="C-语言简介"><a href="#C-语言简介" class="headerlink" title="C 语言简介"></a>C 语言简介</h1><h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>C 语言最初是作为 Unix 系统的开发工具而发明的。</p>
 <p>1969年，美国贝尔实验室的肯·汤普森（Ken Thompson）与丹尼斯·里奇（Dennis Ritchie）一起开发了 Unix 操作系统。Unix 是用汇编语言写的，无法移植到其他计算机，他们决定使用高级语言重写。但是，当时的高级语言无法满足他们的要求，汤普森就在 BCPL 语言的基础上发明了 B 语言。</p>
@@ -1323,7 +1322,7 @@
 <p>上面示例中，函数<code>increment()</code>的参数是一个整数指针<code>p</code>。函数体里面，<code>*p</code>就表示指针<code>p</code>所指向的那个值。对<code>*p</code>赋值，就表示改变指针所指向的那个地址里面的值。</p>
 <p>上面函数的作用是将参数值加<code>1</code>。该函数没有返回值，因为传入的是地址，函数体内部对该地址包含的值的操作，会影响到函数外部，所以不需要返回值。事实上，函数内部通过指针，将值传到外部，是 C 语言的常用方法。</p>
 <p>变量地址而不是变量值传入函数，还有一个好处。对于需要大量存储空间的大型变量，复制变量值传入函数，非常浪费时间和空间，不如传入指针来得高效。</p>
-<h2 id="amp-运算符"><a href="#amp-运算符" class="headerlink" title="&amp; 运算符"></a>&amp; 运算符</h2><p><code>&amp;</code>运算符用来取出一个变量所在的内存地址。</p>
+<h2 id="运算符-2"><a href="#运算符-2" class="headerlink" title="&amp; 运算符"></a>&amp; 运算符</h2><p><code>&amp;</code>运算符用来取出一个变量所在的内存地址。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span> x = <span class="hljs-number">1</span>;<br><span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;x&#x27;s address is %p\n&quot;</span>, &amp;x);<br></code></pre></td></tr></table></figure>
 
 <p>上面示例中，<code>x</code>是一个整数变量，<code>&amp;x</code>就是<code>x</code>的值所在的内存地址。<code>printf()</code>的<code>%p</code>是内存地址的占位符，可以打印出内存地址。</p>
@@ -2570,7 +2569,7 @@
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 使用 C99 标准</span><br><span class="hljs-meta">#<span class="hljs-keyword">pragma</span> c9x on</span><br></code></pre></td></tr></table></figure>
 
 <p>上面示例让编译器以 C99 标准进行编译。</p>
-<h1 id="I-x2F-O-函数"><a href="#I-x2F-O-函数" class="headerlink" title="I&#x2F;O 函数"></a>I&#x2F;O 函数</h1><p>C 语言提供了一些函数，用于与外部设备通信，称为输入输出函数，简称 I&#x2F;O 函数。输入（import）指的是获取外部数据，输出（export）指的是向外部传递数据。</p>
+<h1 id="I-O-函数"><a href="#I-O-函数" class="headerlink" title="I&#x2F;O 函数"></a>I&#x2F;O 函数</h1><p>C 语言提供了一些函数，用于与外部设备通信，称为输入输出函数，简称 I&#x2F;O 函数。输入（import）指的是获取外部数据，输出（export）指的是向外部传递数据。</p>
 <h2 id="缓存和字节流"><a href="#缓存和字节流" class="headerlink" title="缓存和字节流"></a>缓存和字节流</h2><p>严格地说，输入输出函数并不是直接与外部设备通信，而是通过缓存（buffer）进行间接通信。这个小节介绍缓存是什么。</p>
 <p>普通文件一般都保存在磁盘上面，跟 CPU 相比，磁盘读取或写入数据是一个很慢的操作。所以，程序直接读写磁盘是不可行的，可能每执行一行命令，都必须等半天。C 语言的解决方案，就是只要打开一个文件，就在内存里面为这个文件设置一个缓存区。</p>
 <p>程序向文件写入数据时，程序先把数据放入缓存，等到缓存满了，再把里面的数据会一次性写入磁盘文件。这时，缓存区就空了，程序再把新的数据放入缓存，重复整个过程。</p>
@@ -3348,7 +3347,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/C/">#C</a>
+        <a href="/tags/C/" class="print-no-link">#C</a>
       
     </div>
   
@@ -3366,26 +3365,26 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>acidec</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>January 3, 2023</div>
+          <div>发布于</div>
+          <div>2023年1月3日</div>
         </div>
       
       
       
         <div class="license-meta-item">
-          <div>Licensed under</div>
+          <div>许可协议</div>
           <div>
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
                 </a>
@@ -3408,7 +3407,7 @@
                       <a href="/2023/06/08/archlinux-installation/" title="Arch Linux 安装教程">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">Arch Linux 安装教程</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -3417,7 +3416,7 @@
                     
                       <a href="/2022/12/15/katago/" title="KataGo installation">
                         <span class="hidden-mobile">KataGo installation</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -3438,7 +3437,7 @@
     <div id="toc">
   <p class="toc-header">
     <i class="iconfont icon-list"></i>
-    <span>Table of Contents</span>
+    <span>目录</span>
   </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
@@ -3494,7 +3493,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -3502,7 +3501,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -3707,7 +3706,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>
