@@ -16,15 +16,15 @@
   <meta name="author" content="acidec">
   <meta name="keywords" content="">
   
-    <meta name="description" content="于是老板让我写一个抽号机。">
+    <meta name="description" content="电子包写的随机抽号">
 <meta property="og:type" content="article">
-<meta property="og:title" content="抽号机制作笔记">
+<meta property="og:title" content="如何用 Electron 制作一个抽号的程序">
 <meta property="og:url" content="https://acidec.github.io/2023/10/02/random-makeing-note/index.html">
 <meta property="og:site_name" content="acidec&#39;s blog">
-<meta property="og:description" content="于是老板让我写一个抽号机。">
+<meta property="og:description" content="电子包写的随机抽号">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-01T18:55:46.000Z">
-<meta property="article:modified_time" content="2023-10-01T11:50:03.379Z">
+<meta property="article:modified_time" content="2024-01-01T03:18:51.038Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Electron">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>抽号机制作笔记 - acidec&#39;s blog</title>
+  <title>如何用 Electron 制作一个抽号的程序 - acidec&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="抽号机制作笔记"></span>
+            <span id="subtitle" data-typed-text="如何用 Electron 制作一个抽号的程序"></span>
           
         </div>
 
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          799 字
+          830 字
         
       </span>
     
@@ -282,16 +282,16 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">抽号机制作笔记</h1>
+            <h1 id="seo-header">如何用 Electron 制作一个抽号的程序</h1>
             
             
               <div class="markdown-body">
                 
-                <p>于是老板让我写一个抽号机。</p>
+                <p>电子包写的随机抽号</p>
 <span id="more"></span>
 <a class="btn" href="https://github.com/acidec/random"  target="_blank">代码</a>
 
-<h2 id="技术栈选择"><a href="#技术栈选择" class="headerlink" title="技术栈选择"></a>技术栈选择</h2><p>抽号机事给普通人用的，教师对于这些大概一窍不通，所以不能写纯文本的。<br>要易用，有图形界面，像个正常软件一样，界面可以简单不能简陋。<br>我直接想到了电子包这个梗，简单易用出图形界面，会一点前端就行。<br><del>用电子包写软件，我们都有光明的未来</del></p>
+<h2 id="技术栈选择"><a href="#技术栈选择" class="headerlink" title="技术栈选择"></a>技术栈选择</h2><p>抽号机事给普通人用的，他们对于这些大概一窍不通，所以不能写纯 TUI 的。<br>要易用，有图形界面，像个正常软件一样，界面可以简单不能简陋。<br>我直接想到了电子包这个梗，简单易用出图形界面，会一点前端就行。<br><del>用电子包写软件，我们都有光明的未来</del></p>
 <h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><h3 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h3><p>首先你得有<code>nodejs</code>、可用的网络（别用残废的China Mainland局域网）、<code>git</code></p>
 <a class="btn" href="https://nodejs.org/en"  target="_blank">nodejs</a>
 <p>&amp;</p>
@@ -316,14 +316,26 @@
 <p>从1-54号中抽一个并返回。</p>
 <h2 id="跑"><a href="#跑" class="headerlink" title="跑"></a>跑</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs powershell">npm run <span class="hljs-built_in">start</span><br></code></pre></td></tr></table></figure>
 <p>启动一个Electron窗口，就是这个。呐，跑起来了。</p>
-<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>.gitignore -&gt; 忽略一些构建生成和node modules，要不这几百M放Github上每次还得更新</p>
-<p>forge.config.js -&gt; 打包工具的依赖</p>
-<p>index.html -&gt; 网页</p>
-<p>main.js -&gt; 启动脚本</p>
-<p>package(-lock).json -&gt; npm的购物清单</p>
-<p>script.js -&gt; JavaScript代码</p>
-<p>namelist.json -&gt; new feature的名单，已打码（new feature暂时还未实现、、</p>
-<p>css &amp; fonts &amp; js -&gt; Bootstrap CSS</p>
+<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>这是我放在 Github 上的代码的目录结构。<br>建议在获取之后运行下面代码更新 npm 包</p>
+<p><code>npx npm-check-updates -u</code></p>
+<ul>
+<li><p>.gitignore -&gt; 忽略一些构建生成和node modules，要不这几百M放Github上每次还得更新</p>
+</li>
+<li><p>forge.config.js -&gt; 打包工具的依赖</p>
+</li>
+<li><p>index.html -&gt; 网页</p>
+</li>
+<li><p>main.js -&gt; 启动脚本</p>
+</li>
+<li><p>package(-lock).json -&gt; npm的购物清单</p>
+</li>
+<li><p>script.js -&gt; JavaScript代码</p>
+</li>
+<li><p>namelist.json -&gt; new feature的名单，已打码（new feature暂时还未实现、、</p>
+</li>
+<li><p>css &amp; fonts &amp; js -&gt; Bootstrap CSS</p>
+</li>
+</ul>
 
                 
               </div>
@@ -369,7 +381,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>抽号机制作笔记</div>
+      <div>如何用 Electron 制作一个抽号的程序</div>
       <div>https://acidec.github.io/2023/10/02/random-makeing-note/</div>
     </div>
     <div class="license-meta">
@@ -414,12 +426,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/2024/01/01/archlinux-installation/" title="Arch Linux 安装教程">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Arch Linux 安装教程</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/08/archlinux-installation/" title="Arch Linux 安装教程">
-                        <span class="hidden-mobile">Arch Linux 安装教程</span>
+                      <a href="/2023/01/04/clang/" title="C 语言教程">
+                        <span class="hidden-mobile">C 语言教程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

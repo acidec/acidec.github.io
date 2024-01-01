@@ -16,15 +16,15 @@
   <meta name="author" content="acidec">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Please save RAM(">
+    <meta name="description" content="节约内存，请（（">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C++ codes for memory overflow">
+<meta property="og:title" content="如何用 C++ 快速撑爆内存？">
 <meta property="og:url" content="https://acidec.github.io/2009/03/16/cpp-fast-out-of-memory/index.html">
 <meta property="og:site_name" content="acidec&#39;s blog">
-<meta property="og:description" content="Please save RAM(">
+<meta property="og:description" content="节约内存，请（（">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2009-03-16T04:23:36.000Z">
-<meta property="article:modified_time" content="2023-09-16T21:17:20.017Z">
+<meta property="article:modified_time" content="2024-01-01T02:10:09.625Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary_large_image">
@@ -33,7 +33,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>C++ codes for memory overflow - acidec&#39;s blog</title>
+  <title>如何用 C++ 快速撑爆内存？ - acidec&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="C++ codes for memory overflow"></span>
+            <span id="subtitle" data-typed-text="如何用 C++ 快速撑爆内存？"></span>
           
         </div>
 
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          50 字
+          249 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          1 分钟
+          3 分钟
         
       </span>
     
@@ -282,19 +282,19 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">C++ codes for memory overflow</h1>
+            <h1 id="seo-header">如何用 C++ 快速撑爆内存？</h1>
             
             
               <div class="markdown-body">
                 
-                <p>Please save RAM(</p>
+                <p>节约内存，请（（</p>
 <span id="more"></span>
 <h2 id="Codes"><a href="#Codes" class="headerlink" title="Codes"></a>Codes</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">nya</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>) &#123;<br>        <span class="hljs-type">int</span>* ptr = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">nya</span>();<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="Principle"><a href="#Principle" class="headerlink" title="Principle"></a>Principle</h2><p><strong>Repeatedly create new pointers and allocate some memory space. Since <code>while(true)</code> is unlimited, the memory will be filled soon。</strong></p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p><strong>反复创建新指针并分配一些内存空间。由于 <code>while(true)</code> 是无限循环的，内存会很快被填满。</strong></p>
 <div class="note note-warning">
-            <p>Since this program will fill up the memory, the operating system (such as Windows, macOS) that does not automatically <code>kill</code> the process will use <code>swap</code> for memory exchange.<br>It may causes a lot of writes to disk!<br>On Windows, it will cause system instability or even a black screen. In severe cases, unsaved data may be lost and blue screen may occur. Please make sure you have saved all data before running this program.</p>
+            <p>由于这个程序会占满内存，不会自动<code>kill</code>进程的操作系统（如Windows、macOS）将使用<code>swap</code>进行内存交换。<br>这可能导致大量写入磁盘！<br>在Windows上，它会导致系统不稳定甚至出现黑屏。在严重情况下，未保存的数据可能会丢失并且可能出现蓝屏。请确保在运行此程序之前已保存所有数据。</p>
           </div>
-<h2 id="Phenomenon"><a href="#Phenomenon" class="headerlink" title="Phenomenon"></a>Phenomenon</h2><p><strong>On modern Linux distributions (x86_64 Linux-6.0.11-ARCH), the process will be killed when the memory is full.<br>On macOS (arm64 Darwin 22.1.0), it will occupy <code>swap</code> to the maximum limit, and process will not be killed.<br>Windows (x86_64 NT10) will not kill the process, and the screen will be black when the memory is full. It is guessed that the memory space of the integrated graphics display driver memory space has been squeezed out.</strong></p>
+<h2 id="现象"><a href="#现象" class="headerlink" title="现象"></a>现象</h2><p><strong>在现代Linux发行版（x86_64 Linux-6.6.1-ARCH），当内存满时，进程将被终止。<br>在macOS（arm64 Darwin 22.1.0）上，它将占用<code>swap</code>到最大限制，并且进程将不会被终止。<br>Windows（x86_64 NT10）不会终止进程，在内存满时屏幕会变黑。可能已经无法给核显驱动内存了罢（笑</strong></p>
 
                 
               </div>
@@ -340,7 +340,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>C++ codes for memory overflow</div>
+      <div>如何用 C++ 快速撑爆内存？</div>
       <div>https://acidec.github.io/2009/03/16/cpp-fast-out-of-memory/</div>
     </div>
     <div class="license-meta">
@@ -385,9 +385,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/05/rust-quadratic-equation/" title="Using Rust to Realize the Solving of Unary Quadratic Equation">
+                      <a href="/2022/11/05/rust-quadratic-equation/" title="Rust 解决一元二次方程">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Using Rust to Realize the Solving of Unary Quadratic Equation</span>
+                        <span class="hidden-mobile">Rust 解决一元二次方程</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
