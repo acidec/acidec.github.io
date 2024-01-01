@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-deploy-docker/3.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-deploy-docker/4.png">
 <meta property="article:published_time" content="2022-11-29T10:44:28.000Z">
-<meta property="article:modified_time" content="2024-01-01T02:06:53.918Z">
+<meta property="article:modified_time" content="2024-01-01T04:42:20.896Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary_large_image">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          254 字
+          246 字
         
       </span>
     
@@ -292,7 +292,22 @@
             
               <div class="markdown-body">
                 
-                <h2 id="这个容器的设计非常出色，借助主机内核来运行所有“无头”程序，而不必担心安全问题。-先决条件-Arch-Linux-x86-64-大于2GB的RAM-root-权限-开始安装1-通过-pacman-安装-docker-软件包-2-在系统启动时自动启动-docker-守护程序-3-启动-docker-服务-4-加入能够使用-docker-守护程序的-docker-组-5-重新启动-docker-守护程序"><a href="#这个容器的设计非常出色，借助主机内核来运行所有“无头”程序，而不必担心安全问题。-先决条件-Arch-Linux-x86-64-大于2GB的RAM-root-权限-开始安装1-通过-pacman-安装-docker-软件包-2-在系统启动时自动启动-docker-守护程序-3-启动-docker-服务-4-加入能够使用-docker-守护程序的-docker-组-5-重新启动-docker-守护程序" class="headerlink" title="这个容器的设计非常出色，借助主机内核来运行所有“无头”程序，而不必担心安全问题。## 先决条件* Arch Linux x86_64* 大于2GB的RAM* root 权限## 开始安装1. 通过 pacman 安装 docker 软件包 -&gt;    2. 在系统启动时自动启动 docker 守护程序 -&gt;    3. 启动 docker 服务 -&gt;    4. 加入能够使用 docker 守护程序的 docker 组 -&gt;    5. 重新启动 docker 守护程序 -&gt;    "></a>这个容器的设计非常出色，借助主机内核来运行所有“无头”程序，而不必担心安全问题。<br><span id="more"></span><br>## 先决条件<br>* Arch Linux x86_64<br>* 大于2GB的RAM<br>* <code>root</code> 权限<br>## 开始安装<br>1. 通过 <code>pacman</code> 安装 <code>docker</code> 软件包 -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S docker<br></code></pre></td></tr></table></figure><br>2. 在系统启动时自动启动 <code>docker</code> 守护程序 -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br></code></pre></td></tr></table></figure><br>3. 启动 <code>docker</code> 服务 -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl start docker<br></code></pre></td></tr></table></figure><br>4. 加入能够使用 <code>docker</code> 守护程序的 <code>docker</code> 组 -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -G docker -a <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure><br>5. 重新启动 <code>docker</code> 守护程序 -&gt;<br>    <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure></h2><h2 id="后续部分"><a href="#后续部分" class="headerlink" title="后续部分"></a>后续部分</h2><ol>
+                <p>这个容器的设计非常出色，借助主机内核来运行所有“无头”程序，而不必担心安全问题。</p>
+<span id="more"></span>
+<h2 id="先决条件"><a href="#先决条件" class="headerlink" title="先决条件"></a>先决条件</h2><ul>
+<li>Arch Linux x86_64</li>
+<li>大于2GB的RAM</li>
+<li><code>root</code> 权限</li>
+</ul>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><ol>
+<li>通过 <code>pacman</code> 安装 <code>docker</code> 软件包 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S docker<br></code></pre></td></tr></table></figure></li>
+<li>在系统启动时自动启动 <code>docker</code> 守护程序 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl <span class="hljs-built_in">enable</span> docker<br></code></pre></td></tr></table></figure></li>
+<li>启动 <code>docker</code> 服务 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl start docker<br></code></pre></td></tr></table></figure></li>
+<li>加入能够使用 <code>docker</code> 守护程序的 <code>docker</code> 组 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo usermod -G docker -a <span class="hljs-variable">$USER</span><br></code></pre></td></tr></table></figure></li>
+<li>重新启动 <code>docker</code> 守护程序 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo systemctl restart docker<br></code></pre></td></tr></table></figure></li>
+</ol>
+<hr>
+<h2 id="后续部分"><a href="#后续部分" class="headerlink" title="后续部分"></a>后续部分</h2><ol>
 <li>验证 <code>docker</code> 是否在运行 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker version<br></code></pre></td></tr></table></figure></li>
 <li>运行下面的命令将从 <code>dockerhub</code> 拉取并运行“Hello World” docker 容器 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">docker run archlinux<br></code></pre></td></tr></table></figure></li>
 </ol>
