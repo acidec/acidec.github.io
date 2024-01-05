@@ -1,3 +1,4 @@
+https://acidec.github.io/2024/01/06/hexo-fluid-with-gitalk/
 https://acidec.github.io/2022/11/29/archlinux-deploy-docker/
 https://acidec.github.io/2023/01/04/clang/
 https://acidec.github.io/about/index.html
@@ -16,6 +17,7 @@ https://acidec.github.io/tags/Docker/
 https://acidec.github.io/tags/Electron/
 https://acidec.github.io/tags/Rust/
 https://acidec.github.io/tags/C/
+https://acidec.github.io/tags/hexo/
 https://acidec.github.io/categories/Hardware/
 https://acidec.github.io/categories/Software/
 https://acidec.github.io/categories/Programming/

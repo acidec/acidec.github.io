@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://acidec.github.io/2024/01/06/hexo-fluid-with-gitalk/</loc>
+    
+    <lastmod>2024-01-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://acidec.github.io/2022/11/29/archlinux-deploy-docker/</loc>
     
     <lastmod>2024-01-01</lastmod>
@@ -85,7 +94,7 @@
 
   <url>
     <loc>https://acidec.github.io/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,56 +102,63 @@
   
   <url>
     <loc>https://acidec.github.io/tags/CPU/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/Linux/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/C/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/AI/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/Docker/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/Electron/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/Rust/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/tags/C/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://acidec.github.io/tags/hexo/</loc>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -151,21 +167,21 @@
   
   <url>
     <loc>https://acidec.github.io/categories/Hardware/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/categories/Software/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://acidec.github.io/categories/Programming/</loc>
-    <lastmod>2024-01-01</lastmod>
+    <lastmod>2024-01-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
