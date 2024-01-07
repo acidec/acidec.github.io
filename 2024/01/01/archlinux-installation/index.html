@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/3.png">
 <meta property="og:image" content="https://acidec.github.io/img/archlinux-installation/4.png">
 <meta property="article:published_time" content="2024-01-01T11:40:00.000Z">
-<meta property="article:modified_time" content="2024-01-01T03:36:06.110Z">
+<meta property="article:modified_time" content="2024-01-07T09:32:27.701Z">
 <meta property="article:author" content="acidec">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -239,7 +239,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.4k 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
         
-          18 分钟
+          20 分钟
         
       </span>
     
@@ -299,7 +299,7 @@
 <h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="制作安装介质"><a href="#制作安装介质" class="headerlink" title="制作安装介质"></a>制作安装介质</h3><ol>
 <li>到镜像站去下载最新的Arch Linux Live CD iso -&gt;<br><code>https://mirrors.ustc.edu.cn/archlinux/iso/latest/archlinux-x86_64.iso</code></li>
 <li>使用工具将其写入到USB驱动器或者刻录光盘（不建议）<br> 推荐写入工具<a target="_blank" rel="noopener" href="https://mirrors.bfsu.edu.cn/github-release/balena-io/etcher/LatestRelease/">balenaEtcher</a></li>
-<li>重启后按主板厂商的指引设置USB启动或选择USB启动（若失败请先关闭安全启动<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="Secure Boot">[1]</span></a></sup>）</li>
+<li>重启后按主板厂商的指引设置USB启动或选择USB启动（若失败请先关闭安全启动[^1]）</li>
 <li>从USB驱动器引导后就进入了Live CD环境</li>
 </ol>
 <h3 id="Live-CD设置"><a href="#Live-CD设置" class="headerlink" title="Live CD设置"></a>Live CD设置</h3><ol>
@@ -373,15 +373,12 @@
 <li>编辑<code>sudoers</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">visudo<br></code></pre></td></tr></table></figure>
  将文件中的<code># %wheel ALL=(ALL:ALL) ALL</code>（大概率在第108行）的注释取消，使得<code>wheel</code>组里的用户可以使用<code>sudo</code></li>
 <li>配置<code>zsh</code> -&gt; <div class="note note-info">
-            <p>zsh是一个有强大客制化能力的shell，并且Apple也将新macOS默认的shell换成了zsh。现在Arch Linux Live CD的默认shell就是zsh。<br>如果不喜欢zsh，或者考虑兼容性，请跳过这一步。</p>
+            <p>zsh 是一个有强大客制化能力的 shell，并且 Apple 也将新 macOS 默认的 shell 换成了 zsh。现在Arch Linux Live CD 的默认 shell 就是 zsh。<br>如果不喜欢zsh，或者考虑兼容性，请跳过这一步。</p>
           </div>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">su 用户名<br>git <span class="hljs-built_in">clone</span> https://mirrors.tuna.tsinghua.edu.cn/git/ohmyzsh.git ~/.oh-my-zsh<br><span class="hljs-built_in">cp</span> ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc<br>chsh -s /bin/zsh<br><span class="hljs-built_in">exit</span><br></code></pre></td></tr></table></figure></li>
 <li>本地化 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;LANG=\&quot;en_US.UTF-8\&quot;&quot;</span> &gt;&gt; /etc/locale.conf<br>sed -i <span class="hljs-string">&quot;s@#zh_CN.UTF-8 UTF-8@zh_CN.UTF-8 UTF-8@g&quot;</span> /etc/locale.gen<br>sed -i <span class="hljs-string">&quot;s@#en_US.UTF-8 UTF-8@en_US.UTF-8 UTF-8@g&quot;</span> /etc/locale.gen<br></code></pre></td></tr></table></figure>
  去掉<code>#zh_CN.UTF-8 UTF-8</code>和<code>#en_US.UTF-8 UTF-8</code>的注释符号“<code>#</code>”<br> 最后运行 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">locale-gen<br></code></pre></td></tr></table></figure></li>
-<li>服务设置 -&gt; <div class="note note-info">
-            <p>最后一句是为了让系统不进入休眠状态，如果不需要请忽略。</p>
-          </div>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> NetworkManager<br>systemctl <span class="hljs-built_in">enable</span> sshd<br>systemctl <span class="hljs-built_in">enable</span> sddm<br>systemctl <span class="hljs-built_in">enable</span> gdm<br></code></pre></td></tr></table></figure></li>
+<li>服务设置 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">systemctl <span class="hljs-built_in">enable</span> NetworkManager<br>systemctl <span class="hljs-built_in">enable</span> sshd<br>systemctl <span class="hljs-built_in">enable</span> sddm <span class="hljs-comment"># KDE</span><br>systemctl <span class="hljs-built_in">enable</span> gdm <span class="hljs-comment"># GNOME</span><br></code></pre></td></tr></table></figure></li>
 <li>引导设置 -&gt;<br> <code>gurb</code>已支持引导Windows。<br> 可以让<code>grub</code>找到Windows。 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -Sy ntfs-3g fuse os-prober<br></code></pre></td></tr></table></figure>
  对于<code>UEFI</code>引导的安装方式<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-install --target=x86_64-efi --efi-directory=/boot/efi<br>sed -i <span class="hljs-string">&quot;s@#GRUB_DISABLE_OS_PROBER=false@GRUB_DISABLE_OS_PROBER=false@g&quot;</span> /etc/default/grub<br>grub-mkconfig -o /boot/grub/grub.cfg<br></code></pre></td></tr></table></figure><br> 对于<code>BIOS</code>引导的安装方式<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">grub-install /dev/nvme0n1<br>sed -i <span class="hljs-string">&quot;s@#GRUB_DISABLE_OS_PROBER=false@GRUB_DISABLE_OS_PROBER=false@g&quot;</span> /etc/default/grub<br>grub-mkconfig -o /boot/grub/grub.cfg<br></code></pre></td></tr></table></figure></li>
 <li>退出<code>chroot</code>环境并重启 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">exit</span><br>reboot<br></code></pre></td></tr></table></figure>
@@ -392,7 +389,7 @@
 <li>输入法配置<br> 如果直接<code>右键</code>-<code>配置</code>是会显示这个的 -&gt;<br> <img src="/../img/archlinux-installation/3.png" srcset="/img/loading.gif" lazyload><br> 这会进入文本配置，显然我们是不懂的（<br> 所以要安装<code>fcitx5-configtool</code> -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S fcitx5-configtool<br></code></pre></td></tr></table></figure>
  然后再<code>右键</code>-<code>配置</code>就可以看到 -&gt;<br> <img src="/../img/archlinux-installation/4.png" srcset="/img/loading.gif" lazyload><br> 然而现在按<code>Ctrl+Tab</code>是不能切换到拼音输入法的，我们需要把<code>Fcitx5</code>设为默认输入法并自动启动 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/environment<br></code></pre></td></tr></table></figure>
  把下面的东西加进去 -&gt; <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">GTK_IM_MODULE=fcitx<br>QT_IM_MODULE=fcitx<br>XMODIFIERS=@im=fcitx<br>SDL_IM_MODULE=fcitx<br>GLFW_IM_MODULE=ibus<br></code></pre></td></tr></table></figure>
- 重新登录就可以正常使用啦~<br> 更多用法请参阅<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Arch Wiki</a></li>
+ 重新登录就可以正常使用喵~<br> 更多用法请参阅<a target="_blank" rel="noopener" href="https://wiki.archlinux.org/title/Fcitx5_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">Arch Wiki</a></li>
 <li>软件源<br> 众所周知，官方源对于灰色地带&#x2F;非自由软件是不收录的。<br> 所以我们通常用第三方源+<code>AUR</code>来进行补充。<br> 官方源是不带任何<code>AUR</code>工具的，所以我们先装<code>archlinuxcn</code>源 -&gt; <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo vim /etc/pacman.conf<br></code></pre></td></tr></table></figure>
  加入以下文本 -&gt; <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">[archlinuxcn]<br>Server = https://mirrors.bfsu.edu.cn/archlinuxcn/$arch<br></code></pre></td></tr></table></figure>
  然后获取<code>keyring</code> -&gt; <div class="note note-warning">
@@ -404,10 +401,31 @@
  就可以使用<code>archlinuxcn</code>源了！<br> 由于要使用<code>AUR</code>，所以我们先装一个AUR工具： <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo pacman -S paru<br></code></pre></td></tr></table></figure>
  详细的用法和<code>pacman</code>一样。</li>
 <li>引导Windows<br> 在安装系统时，<code>os-prober</code>往往不能正常检测到Windows，需要我们再运行 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo grub-mkconfig -o /boot/grub/grub.cfg<br></code></pre></td></tr></table></figure>
- 重启即可看到<code>Windows Boot Manager</code>。<br><strong>到现在一个日常使用的系统已经完成了~ 剩下的请自由发挥~</strong></li>
+ 重启即可看到<code>Windows Boot Manager</code>。</li>
 </ol>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>Secure Boot
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+<h2 id="显卡驱动"><a href="#显卡驱动" class="headerlink" title="显卡驱动"></a>显卡驱动</h2><p>如果是A卡和I卡，在这个时候已经不用看了，开源的驱动会做得很好，而且已经随桌面环境装上了<br>而N卡，需要进行以下步骤</p>
+<h3 id="查看显卡型号"><a href="#查看显卡型号" class="headerlink" title="查看显卡型号"></a>查看显卡型号</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs zsh">lspci -k | grep -A 2 -E &quot;(VGA|3D)&quot;<br></code></pre></td></tr></table></figure>
+<p>GeForce 900 系以及更新的显卡（NV110+），安装 nvidia（用于官方源里的标准内核）或者 nvidia-lts（用于 linux-lts 内核）</p>
+<p>Turing (NV160&#x2F;TUXXX) 系列或更新的显卡。可以安装 nvidia-open 包，开源的（仅适用于官方源里的内核，其他内核上必须使用 nvidia-open-dkms 包）</p>
+<p>更老的显卡型号（发布于 2010 年或更早），就用内核自带的 Nouveau</p>
+<h3 id="安装驱动"><a href="#安装驱动" class="headerlink" title="安装驱动"></a>安装驱动</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs zsh">sudo pacman -S nvidia nvidia-settings<br></code></pre></td></tr></table></figure>
+<h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>安装 NVIDIA 官方的驱动之后，需要编辑<code>/etc/mkinitcpio.conf</code>，在 HOOKS 一行删除<code>kms</code>并保存<br>然后执行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs zsh">mkinitcpio -P<br></code></pre></td></tr></table></figure>
+<p>重新生成一次镜像。这能防止 initramfs 包含 nouveau 模块，避免 nouveau 和官方驱动的冲突。</p>
+<p><strong>到现在一个日常使用的系统已经完成了~ 剩下的请自由发挥~</strong></p>
+<h2 id="常用软件"><a href="#常用软件" class="headerlink" title="常用软件"></a>常用软件</h2><ol>
+<li>telegram<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs zsh">sudo pacman -S telegram-desktop<br></code></pre></td></tr></table></figure></li>
+<li>Visual Studio Code<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs zsh">paru -S visual-studio-code-bin<br></code></pre></td></tr></table></figure></li>
+<li>Wine<br>先启动 <code>/etc/pacman.conf</code> 中的 <code>multilib</code> 源，其中包含32位软件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs zsh">sudo pacman -S lib32-mesa # 普通御三家卡<br>sudo pacman -S lib32-nvidia-utils # 绿厂闭源驱动，效果好，需要现代N卡<br>sudo pacman -S lib32-amdgpu-pro-oglp # 专业A卡<br>sudo pacman -S wine wine-gecko wine-mono lib32-alsa-lib lib32-alsa-plugins<br></code></pre></td></tr></table></figure>
+<ol start="4">
+<li>Chrome &#x2F; Edge<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs zsh">paru -S microsoft-edge-stable-bin # 莫名慢速下载警告<br>paru -S google-chrome<br></code></pre></td></tr></table></figure></li>
+<li>网易云替代品<br>Go 写的 musicfox，TUI 版网易云<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs zsh">paru -S go-musicfox-git<br></code></pre></td></tr></table></figure></li>
+<li>Steam<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs zsh">sudo pacman -S steam<br>sudo paru -S proton<br></code></pre></td></tr></table></figure>
+<del>现在都能玩黄油了惹</del></li>
+</ol>
+
                 
               </div>
             
